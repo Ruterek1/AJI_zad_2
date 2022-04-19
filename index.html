@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8"/>
+    <!--To ensure proper rendering and touch zooming for all devices, add the responsive viewport meta tag to your <head>.-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="theme.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+    integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <!--<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" 
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="scripts.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <title>MyTODO App</title>
+</head>
+
+<body style="background-color: #1d1e1f;">
+    
+    <h1 class="text-white text-center display-4 bg-black py-3">MyNotes</h1>
+
+    <nav>
+        <div class="nav nav-tabs bg-dark" id="nav-tab" role="tablist">
+          <a class="nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Home</a>
+          <a class="nav-link" id="nav-add-tab" data-toggle="tab" href="#nav-add" role="tab" aria-controls="nav-add" aria-selected="false">Add</a>
+          </div>
+    </nav>
+    <div class="tab-content" id="nav-tabContent">
+        <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+            <table class="table table-dark table-striped table-hover table-borderless">
+                <thead class="thead text-center">
+                    <tr>
+                        <th scope="col">Title</th>
+                        <th scope="col">Description</th>          
+                        <th scope="col">Place</th>
+                        <th scope="col">Due date</th>
+                        <th scope="col">Option</th>
+                    </tr>
+                </thead>
+                <tbody id="todoListView"></tbody>        
+            </table>
+            <div class="card shadow-sm text-white bg-dark">
+                <div class="card-header">Search</div>
+                <div class="card-body">
+                    <input type="text" id="inputSearch" placeholder="Type Your seach here..."/>
+                    <input type="date" id="inputDate2"/>
+                    <input type="date" id="inputDate3"/>
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane fade" id="nav-add" role="tabpanel" aria-labelledby="nav-add-tab">
+            <div class="card text-right shadow-sm text-white bg-dark" style="width: 20rem;">
+                <div class="card-header text-center">
+                  Add TODO activity
+                </div>
+                <div class="card-body">
+                  <p class="card-text">Complete the form below</p>
+                  
+                <form id="form1">
+                    <div class="form-group">
+                        <label>Title</label>
+                        <input type="text" id="inputTitle"/>
+                    </div>
+                    <div class="form-group">
+                        <label>Description</label>
+                        <input type="text" id="inputDescription"/>
+                    </div>
+                    <div class="form-group">
+                        <label>Place</label>
+                        <input type="text" id="inputPlace"/>
+                    </div>
+                    <div class="form-group">
+                        <label>Due date</label>
+                        <input type="date" id="inputDate"/>
+                    </div>
+                    <input class="btn btn-outline-success" type="button" value="add" onclick="addTodo()"/>
+                        <!-- nie działają...
+                        <button class="btn btn-primary" onclick="addTodo()">Send</button>
+                        <button onclick="addTodo()">Send</button>-->
+                </form>
+                </div>
+            </div>
+        </div>
+    </div> 
+</body>
+
+</html>
